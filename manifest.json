@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Mendix Lens",
+  "version": "1.0.0",
+  "description": "Inspect Mendix widgets on the page: see page name, widget names, data Mendix IDs, row index, and more. Auto-injected on Mendix apps only.",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Mendix Lens"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["injector.js", "MendixLensCore.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
